@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart'; // Asegúrate de importar tu pantalla
+import 'home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Calistenia App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blue, // Color principal simple
       ),
-      home: HomeScreen(), // Aquí se establece tu pantalla principal
+      home: HomeScreen(), // Pantalla principal
     );
   }
 }
