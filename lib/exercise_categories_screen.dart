@@ -66,7 +66,11 @@ class CategoryButton extends StatelessWidget {
         ),
         child: Text(
           category,
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.white, // Cambiamos el color del texto a blanco
+            fontWeight: FontWeight.bold, // Hacemos las letras en negrita
+          ),
         ),
       ),
     );
