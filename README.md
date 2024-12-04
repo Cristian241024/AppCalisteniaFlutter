@@ -2,15 +2,25 @@
 
 Proyecto con Flutter
 
-## Getting Started
+# Tarjeta de Ejercicio en la Aplicación de Calistenia
 
-This project is a starting point for a Flutter application.
+Este componente muestra una tarjeta de ejercicio que incluye la imagen, los músculos que trabaja, los botones interactivos y los detalles del ejercicio
 
-A few resources to get you started if this is your first Flutter project:
+## Componentes de la Tarjeta de Ejercicio:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. **Imagen del Ejercicio**:
+    - Se muestra una imagen representativa del ejercicio.
+    - Las imágenes se cargan localmente desde los recursos de la app, lo que mejora el rendimiento.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. **Músculos Implicados**:
+    - Se muestra una lista de imagen de los músculos que se trabajan durante el ejercicio.
+    - Se visualiza a lado izquierdo de la imagen del ejercicio.
+
+3. **Botones Interactivos**:
+    - **Tutorial**: Botón para acceder a una guía del ejercicio con realidad virtual.
+    - **Iniciar**: Botón para iniciar el ejercicio o hacer el seguimiento de las repeticiones con temporizador.
+    - **Favorito**: Botón para marcar el ejercicio como favorito, usando un ícono que cambia de estado.
+
+4. **Detalles del Ejercicio**:
+    - Una descripción detallada del ejercicio, explicando cómo realizarlo correctamente, posibles progresiones o variaciones.
+    - Se muestra en una sección expandible o con un formato que permite lectura clara.
