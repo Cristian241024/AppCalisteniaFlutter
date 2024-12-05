@@ -6,80 +6,137 @@ class DifficultyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Selecciona tu nivel de dificultad"),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Text(
+          "Selecciona tu nivel de dificultad",
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        centerTitle: true,
       ),
-      body: Center( // Centra el contenido en la pantalla
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, // Centra los botones verticalmente
-          crossAxisAlignment: CrossAxisAlignment.center, // Centra los botones horizontalmente
-          children: [
-            DifficultyButton(
-              difficulty: "Principiante",
-              color: Colors.green,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ExerciseCategoriesScreen(difficulty: "Principiante"),
-                  ),
-                );
-              },
-            ),
-            DifficultyButton(
-              difficulty: "Intermedio",
-              color: Colors.orange,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ExerciseCategoriesScreen(difficulty: "Intermedio"),
-                  ),
-                );
-              },
-            ),
-            DifficultyButton(
-              difficulty: "Avanzado",
-              color: Colors.red,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ExerciseCategoriesScreen(difficulty: "Avanzado"),
-                  ),
-                );
-              },
-            ),
-          ],
+      body: Container(
+        color: Colors.lightBlue.shade400, // Fondo celeste sólido
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              DifficultyCard(
+                difficulty: "Principiante",
+                description: "Ideal para comenzar a entrenar.",
+                icon: Icons.accessibility_new, // Ícono de principiante
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ExerciseCategoriesScreen(difficulty: "Principiante"),
+                    ),
+                  );
+                },
+              ),
+              DifficultyCard(
+                difficulty: "Intermedio",
+                description: "Desafíos moderados para avanzar.",
+                icon: Icons.directions_run, // Ícono de intermedio
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ExerciseCategoriesScreen(difficulty: "Intermedio"),
+                    ),
+                  );
+                },
+              ),
+              DifficultyCard(
+                difficulty: "Avanzado",
+                description: "Retos intensos para expertos.",
+                icon: Icons.fitness_center, // Ícono de avanzado
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ExerciseCategoriesScreen(difficulty: "Avanzado"),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-class DifficultyButton extends StatelessWidget {
+class DifficultyCard extends StatelessWidget {
   final String difficulty;
-  final Color color;
+  final String description;
+  final IconData icon;
   final VoidCallback onPressed;
 
-  DifficultyButton({
+  DifficultyCard({
     required this.difficulty,
-    required this.color,
+    required this.description,
+    required this.icon,
     required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: color,
-          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-        ),
-        child: Text(
-          difficulty,
-          style: TextStyle(fontSize: 18, color: Colors.white),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: GestureDetector(
+        onTap: onPressed,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          elevation: 8,
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.shade100, // Fondo del ícono
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    icon,
+                    color: Colors.blue.shade800,
+                    size: 30,
+                  ),
+                ),
+                SizedBox(width: 20),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      difficulty,
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue.shade800,
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      description,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey.shade700,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
