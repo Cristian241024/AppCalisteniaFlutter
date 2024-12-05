@@ -13,7 +13,7 @@ class ExerciseDetailScreen extends StatelessWidget {
             crossAxisCount: 2, // Dos columnas
             crossAxisSpacing: 10, // Espacio horizontal entre los elementos
             mainAxisSpacing: 10, // Espacio vertical entre los elementos
-            childAspectRatio: 8, // Relación de aspecto base (más alta que ancha)
+            childAspectRatio: 4, // Relación de aspecto base (más alta que ancha)
           ),
           itemCount: 10, // Número total de elementos
           itemBuilder: (context, index) {

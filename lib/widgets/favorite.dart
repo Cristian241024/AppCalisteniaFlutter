@@ -29,7 +29,7 @@ class _LikeButtonState extends State<Favorite> {
         children: [
           // Imagen (icono), cambiada según el estado
           Image.asset(
-            _stateLike ? 'favorito2.png' : 'favorito1.png',
+            _stateLike ? 'assets/favorito2.png' : 'assets/favorito1.png',
             width: 24,
             height: 24,
           ),

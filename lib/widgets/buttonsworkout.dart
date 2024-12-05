@@ -24,7 +24,7 @@ class ButtonsWorkout extends StatelessWidget {
           onPressed: () {},
           style: buttonStyle,
           icon: Image.asset(
-            'tour-virtual1.png',  // Ruta de tu imagen
+            'assets/gafas-vr.png',  // Ruta de tu imagen
             width: 24,  // Puedes ajustar el tamaño de la imagen
             height: 24, // Puedes ajustar el tamaño de la imagen
           ),
@@ -35,7 +35,7 @@ class ButtonsWorkout extends StatelessWidget {
           onPressed: () {},
           style: buttonStyle,
           icon: Image.asset(
-            'siguiente-pista1.png',  // Ruta de tu imagen
+            'assets/siguiente-pista1.png',  // Ruta de tu imagen
             width: 24,  // Ajusta el tamaño de la imagen
             height: 24, // Ajusta el tamaño de la imagen
           ),

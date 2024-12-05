@@ -1,4 +1,3 @@
-import 'package:app_calistenia_movil/widgets/exerciseDetail.dart';
 import 'package:app_calistenia_movil/widgets/listcardworkout.dart';
 import 'package:flutter/material.dart';
 
@@ -25,3 +24,4 @@ class WorkoutScreen extends StatelessWidget {
     );
   }
 }
+
