@@ -1,5 +1,8 @@
-import 'package:app_calistenia_movil/difficulty_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:app_calistenia_movil/login_screen.dart';
+//import 'login_screen.dart'; // Importa la nueva pantalla de inicio de sesión
+//import 'difficulty_screen.dart';
+import 'package:app_calistenia_movil/difficulty_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -8,10 +11,10 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/fondo.jpg'), // Asegúrate de que el archivo exista
+            image: AssetImage('assets/fondo.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.3), // Oscurece ligeramente la imagen de fondo
+              Colors.black.withOpacity(0.3),
               BlendMode.darken,
             ),
           ),
@@ -52,7 +55,10 @@ class HomeScreen extends StatelessWidget {
                 text: "Registro/Iniciar Sesión",
                 icon: Icons.login,
                 onPressed: () {
-                  // Acción para el botón de inicio de sesión
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                  );
                 },
               ),
             ],
@@ -91,13 +97,13 @@ class HomeButton extends StatelessWidget {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blueAccent.shade700, // Color de fondo del botón
-        foregroundColor: Colors.white, // Color del texto e ícono
+        backgroundColor: Colors.blueAccent.shade700,
+        foregroundColor: Colors.white,
         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30), // Bordes redondeados
+          borderRadius: BorderRadius.circular(30),
         ),
-        elevation: 8, // Sombra del botón
+        elevation: 8,
       ),
     );
   }
