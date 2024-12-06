@@ -1,6 +1,5 @@
-import 'package:app_calistenia_movil/screens/workout_screen.dart';
+import 'package:app_calistenia_movil/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart'; // Asegúrate de importar tu pantalla
 
 void main() {
   runApp(MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:WorkoutScreen(), // Aquí se establece tu pantalla principal
+      home: HomeScreen(), // Aquí se establece tu pantalla principal
     );
   }
 }
