@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -79,8 +79,7 @@ class LoginScreen extends StatelessWidget {
                       style: TextStyle(fontSize: 18),
                     ),
                     style: ElevatedButton.styleFrom(
-                      padding:
-                      EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                      padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
@@ -91,7 +90,11 @@ class LoginScreen extends StatelessWidget {
                   // Hipervínculo de registro
                   GestureDetector(
                     onTap: () {
-                      // Acción del enlace de registro (pendiente de implementar)
+                      // Navegar a la pantalla de registro
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RegisterScreen()),
+                      );
                     },
                     child: Text(
                       "¿No tienes una cuenta? Regístrate aquí",
