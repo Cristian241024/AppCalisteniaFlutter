@@ -1,50 +1,53 @@
-import 'package:app_calistenia_movil/widgets/favorite.dart';
 import 'package:flutter/material.dart';
+import 'package:app_calistenia_movil/screens/timer_screen.dart';
+
+import 'favorite.dart';
 
 class ButtonsWorkout extends StatelessWidget {
   const ButtonsWorkout({super.key});
 
   @override
   Widget build(BuildContext context) {
-      const textStyle = TextStyle(
+    const textStyle = TextStyle(
         color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold);
 
     ButtonStyle buttonStyle = TextButton.styleFrom(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12), // Bordes redondeados
+        borderRadius: BorderRadius.circular(12),
       ),
       backgroundColor: Colors.indigo[900],
     );
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround, // Espacio horizontal entre los botones
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        // Botón con imagen y texto
         TextButton.icon(
           onPressed: () {},
           style: buttonStyle,
           icon: Image.asset(
-            'assets/gafas-vr.png',  // Ruta de tu imagen
-            width: 24,  // Puedes ajustar el tamaño de la imagen
-            height: 24, // Puedes ajustar el tamaño de la imagen
+            'assets/gafas-vr.png',
+            width: 24,
+            height: 24,
           ),
-          label: const Text("tutorial", style: textStyle),   // El texto del botón
+          label: const Text("tutorial", style: textStyle),
         ),
-        // Otro botón con imagen y texto
         TextButton.icon(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => TimerScreen()),
+            );
+          },
           style: buttonStyle,
           icon: Image.asset(
-            'assets/siguiente-pista1.png',  // Ruta de tu imagen
-            width: 24,  // Ajusta el tamaño de la imagen
-            height: 24, // Ajusta el tamaño de la imagen
+            'assets/siguiente-pista1.png',
+            width: 24,
+            height: 24,
           ),
-          label: const Text("iniciar", style: textStyle),   // El texto del botón
+          label: const Text("iniciar", style: textStyle),
         ),
-        // Si tienes un botón con "favoritos", por ejemplo
         Favorite(buttonStyle: buttonStyle, textStyle: textStyle),
       ],
     );
   }
 }
-
