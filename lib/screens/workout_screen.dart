@@ -1,5 +1,5 @@
-import 'package:app_calistenia_movil/widgets/listcardworkout.dart';
 import 'package:flutter/material.dart';
+import 'package:app_calistenia_movil/widgets/listcardworkout.dart';
 
 class WorkoutScreen extends StatelessWidget {
   const WorkoutScreen({
@@ -24,4 +24,3 @@ class WorkoutScreen extends StatelessWidget {
     );
   }
 }
-

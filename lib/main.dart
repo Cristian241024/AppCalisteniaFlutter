@@ -1,5 +1,5 @@
 import 'package:app_calistenia_movil/screens/home_screen.dart';
-//import 'package:app_calistenia_movil/screens/workout_screen.dart';//importar solo para parte de cali
+import 'package:app_calistenia_movil/screens/workout_screen.dart';//importar solo para parte de cali
 
 import 'package:flutter/material.dart';
 

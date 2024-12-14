@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:app_calistenia_movil/screens/workout_screen.dart';
+ // Importación de la pantalla de Dominadas
 
 class ExerciseCategoriesScreen extends StatelessWidget {
   final String difficulty;
@@ -10,23 +12,39 @@ class ExerciseCategoriesScreen extends StatelessWidget {
     // Ejercicios según la dificultad
     final Map<String, List<Map<String, dynamic>>> exerciseData = {
       "Principiante": [
-        {"name": "Fondo", "description": "Ejercicio básico para el tren superior.", "icon": Icons.accessibility_new},
-        {"name": "Flexiones", "description": "Fortalece pecho y brazos.", "icon": Icons.push_pin},
-        {"name": "Dominadas", "description": "Ideal para trabajar la espalda.", "icon": Icons.fitness_center},
-        {"name": "Pierna", "description": "Entrena fuerza en las piernas.", "icon": Icons.directions_walk},
+        {
+          "name": "Fondo",
+          "description": "Ejercicio básico para el tren superior.",
+          "icon": Icons.accessibility_new,
+          "onTap": () {},
+        },
+        {
+          "name": "Flexiones",
+          "description": "Fortalece pecho y brazos.",
+          "icon": Icons.push_pin,
+          "onTap": () {},
+        },
+        {
+          "name": "Dominadas",
+          "description": "Ideal para trabajar la espalda.",
+          "icon": Icons.fitness_center,
+          "onTap": () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => WorkoutScreen(), // Redirección a WorkoutScreen
+              ),
+            );
+          },
+        },
+        {
+          "name": "Pierna",
+          "description": "Entrena fuerza en las piernas.",
+          "icon": Icons.directions_walk,
+          "onTap": () {},
+        },
       ],
-      "Intermedio": [
-        {"name": "Core", "description": "Fortalece el abdomen y el core.", "icon": Icons.sports_gymnastics},
-        {"name": "Plancha", "description": "Ejercicio de resistencia.", "icon": Icons.timer},
-        {"name": "Pino", "description": "Mejora el equilibrio y la fuerza.", "icon": Icons.accessibility},
-        {"name": "Muscle Up", "description": "Desafío para el tren superior.", "icon": Icons.sports},
-      ],
-      "Avanzado": [
-        {"name": "Plancha con un brazo", "description": "Resistencia extrema.", "icon": Icons.self_improvement},
-        {"name": "Dominadas con peso", "description": "Mayor intensidad para la espalda.", "icon": Icons.add_chart},
-        {"name": "Flexiones en anillas", "description": "Fortalece el tren superior y el core.", "icon": Icons.settings_suggest},
-        {"name": "Bandera humana", "description": "Dominio del cuerpo completo.", "icon": Icons.star},
-      ],
+      // Añadir ejercicios para Intermedio y Avanzado...
     };
 
     // Obtener la lista de ejercicios según la dificultad
@@ -49,6 +67,7 @@ class ExerciseCategoriesScreen extends StatelessWidget {
               name: exercise['name'],
               description: exercise['description'],
               icon: exercise['icon'],
+              onTap: exercise['onTap'], // Pasar la acción de cada botón
             );
           },
         ),
@@ -61,11 +80,13 @@ class ExerciseCard extends StatelessWidget {
   final String name;
   final String description;
   final IconData icon;
+  final VoidCallback onTap;
 
   ExerciseCard({
     required this.name,
     required this.description,
     required this.icon,
+    required this.onTap,
   });
 
   @override
@@ -105,6 +126,7 @@ class ExerciseCard extends StatelessWidget {
             color: Colors.grey.shade700,
           ),
         ),
+        onTap: onTap, // Acción al hacer clic en el botón
       ),
     );
   }
