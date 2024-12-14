@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:app_calistenia_movil/login_screen.dart';
 //import 'login_screen.dart'; // Importa la nueva pantalla de inicio de sesión
 //import 'difficulty_screen.dart';
-import 'package:app_calistenia_movil/difficulty_screen.dart';
+import 'package:app_calistenia_movil/screens/difficulty_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
